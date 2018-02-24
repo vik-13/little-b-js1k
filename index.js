@@ -1,4 +1,5 @@
 v=c.fillRect.bind(c);
+r=Math.random;
 k=9;onkeydown=e=>k=e.which%32;onkeyup=e=>k=9;
 s=[-1,-25,1,25,0];
 
@@ -7,20 +8,17 @@ h=26;
 p=0;
 for(i=0;i<325;i++){
 	x=i%25;y=~~(i/25);
-	j.push((i==27||i==51||i==h)?0:!(y%2)&&!(x%2)||!y||y==12||!x||x==24?1:Math.random()<.5?4:Math.random()<.05?3:0);
+	j.push((i==27||i==51||i==h)?0:!(y%2)&&!(x%2)||!y||y==12||!x||x==24?1:r()<.5?4:r()<.05?3:0);
 }
 
 o=(e,{x,y})=>{for(i=9;i<56;i++){+parseInt(e,36).toString(2)[i-8]&&v(x+(i%8),y+~~(i/8),1,1)}};
 
-d=q=>{for(i=0;i<64;i++){(i%2)&&(~~(i/8)%2)&&v(q.x+i%8,q.y+~~(i/8),1,1);}};
-
 t=i=>{
-	g=s[~~(Math.random()*4)];
+	g=s[~~(r()*4)];
 	!j[i+g]&&(j[i+g]=3)&&(j[i]=0);
 };
 
 c.scale(5, 5);
-
 setInterval(()=>{
 	!k&&!p&&(j[h]=2)&&(p=30);
 	g=h+s[k-5]||h;
@@ -37,8 +35,8 @@ setInterval(()=>{
 		i==h&&(o('1nbzezc29q',{x,y}));
 		u==2&&(o('1JDR1CTOOS',{x,y}));
 		u==3&&(o('21DFB5XNAI',{x,y}));
-		u==1&&(c.beginPath()||v(x,y,8,8));
-		u==4&&(d({x,y}));
+		u==4&&(o('1UDWIFB61H',{x,y}));
+		u==1&&v(x,y,8,8);
 	});
 }, 99)
 
@@ -98,6 +96,30 @@ setInterval(()=>{
 // 01010101
 // 00101010
 
+// Bricks
+// aa,55,aa,55,aa,55
+// aa55aa55aa55
+// 1UDXHXVWB9
+
+// 10101010
+// 01010101
+// 10101010
+// 01010101
+// 10101010
+// 01010101
+
+// Bricks 2
+// aa,55,2a,55,2a,55
+// aa552a552a55
+// 1UDWIFB61H
+
+// 10101010
+// 01010101
+// 00101010
+// 01010101
+// 00101010
+// 01010101
+
 // 00000000
 // 00000000
 // 00000000
@@ -124,7 +146,7 @@ setInterval(()=>{
 // o - player, bomb, monster render function;
 // p - Bomb
 // q - [x, y] of global position
-// r - Loop
+// r -
 // s - Movements array
 // t - update monsters positions;
 // u - pressed key;
@@ -165,3 +187,6 @@ setInterval(()=>{
 // 	g==2&&!j[i-25]&&(j[i-25]=3)&&(j[i]=0);
 // 	g==3&&!j[i+25]&&(j[i+25]=3)&&(j[i]=0);
 // };
+
+
+// d=q=>{for(i=0;i<64;i++){(i%2)&&(~~(i/8)%2)&&v(q.x+i%8,q.y+~~(i/8),1,1);}};
