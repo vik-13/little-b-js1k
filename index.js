@@ -15,7 +15,8 @@ o=(e,[x,y],l)=>{
 
 f=m=>{for(i=125;i<200;i++)j[i]=0;z=1;h=-1;w=m};
 
-c.scale(5, 5);
+t=Math.min(a.width/175,a.height/91);
+c.scale(t, t);
 setInterval(()=>{
 	!k&&!p&&(j[h]=2)&&(p=70);
 	!(l%3)&&(g=h+s[k-5]||h,h=!j[g]?g:h);
@@ -201,7 +202,7 @@ setInterval(()=>{
 // q -
 // r - Math.random
 // s - Movements array
-// t -
+// t - Size;
 // u - pressed key;
 // v -
 // w - End reason;

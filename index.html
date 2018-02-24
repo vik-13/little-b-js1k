@@ -3,9 +3,13 @@
 	<meta charset="utf-8">
 </head>
 <body style="margin: 0; padding: 0; border: 0; width: 100%; height: 100%;">
-<canvas id="a" style="display: block; width: 875px; height: 455px;" width="875" height="455"></canvas>
+<canvas id="a" style="display: block;"></canvas>
 <script>
 	window.a = document.getElementById('a');
+	a.width=window.innerWidth;
+	a.height=window.innerHeight;
+	a.style.width=window.innerWidth+'px';
+	a.style.height=window.innerHeight+'px';
 	window.b = document.body;
 	window.c = window.a.getContext('2d');
 </script>
