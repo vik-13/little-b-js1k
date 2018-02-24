@@ -13,16 +13,12 @@ for(i=0;i<325;i++){
 
 o=(e,{x,y})=>{for(i=9;i<56;i++){+parseInt(e,36).toString(2)[i-8]&&v(x+(i%8),y+~~(i/8),1,1)}};
 
-t=i=>{
-	g=s[~~(r()*4)];
-	!j[i+g]&&(j[i+g]=3)&&(j[i]=0);
-};
+t=i=>{g=s[~~(r()*4)];!j[i+g]&&(j[i+g]=3)&&(j[i]=0)};
 
 c.scale(5, 5);
 setInterval(()=>{
 	!k&&!p&&(j[h]=2)&&(p=30);
-	g=h+s[k-5]||h;
-	h=!j[g]?g:h;
+	g=h+s[k-5]||h;h=!j[g]?g:h;
 	p&&(p--);
 
 	j.forEach((u,i)=>{
@@ -38,7 +34,9 @@ setInterval(()=>{
 		u==4&&(o('1UDWIFB61H',{x,y}));
 		u==1&&v(x,y,8,8);
 	});
-}, 99)
+},99)
+
+//829
 
 // 1 - wall;
 // 2 - bomb;
